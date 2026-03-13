@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title> December Outlook </title>
-<style>
-html, body { margin: 0; padding: 0; overflow: hidden; height: 100%; }
-iframe { border: none; width: 100vw; height: 100vh; }
-</style>
+  <meta charset="UTF-8">
+  <title> Outlook </title>
+  <meta name="keywords" content="automatic slideshow, responsive, image gallery" />
+  <meta name="description" content="responsive image slideshow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="auto-slideshow.css">
 </head>
+
+  
 <body>
-<iframe id="sheet" src="https://adticorp-my.sharepoint.com/personal/jniths_adticorp_com/_layouts/15/embed.aspx?UniqueId=f0f4f47c-7a2d-4eec-ae6d-8649258e890e" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Presentation 1"></iframe>
+    <header>
+      <h1>Enhanced Slideshow</h1>
+      <p> This is a responsive gallery. Automatic and Manual control.</p>
+    </header>
 
-<script>
-let iframe = document.getElementById("sheet");
-let scrollPos = 0;
-let maxScroll = 10000; // adjust according to sheet length
-let speed = 1; // pixels per frame
 
-function scrollSheet() {
-scrollPos += speed;
-iframe.contentWindow.scrollTo(0, scrollPos);
-if(scrollPos >= maxScroll) scrollPos = 0;
-requestAnimationFrame(scrollSheet);
-}
+    <!-- modal for the responsive slideshow -->
+    <div id="slide-modal">
+      <div id="wrap">
+        <a id="close" class="controls">&times;</a>
+        <a id="expand" class="controls">&times;</a>
+        <a id="previous" class="controls">&times;</a>
+        <a id="next" class="controls">&times;</a>
+        <a id="stop" class="controls">&times;</a>
+        <a id="automatic" class="controls">&times;</a>
+      </div>
+      <img id="modal-content" src="images/testimage.jpg alt="image in a slideshow" />
+    </div>
 
-scrollSheet();
-setTimeout(() => location.reload(), 1800000);
-</script>
+  <footer>
+    <h2>Alex Nith</h2>
+    <ul>
+      <li><a href="https://github.com/alexn275" target="_blank">Github</a></li>
+    </ul>
+  </footer>
+
+<script src="auto-slidshow.js"></script>
+
 </body>
+
 </html>
